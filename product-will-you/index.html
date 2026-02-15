@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Question</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Pacifico&family=Poppins:wght@300;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div id="loading-screen">
+        <div class="spinner">❤️</div>
+        <p>Checking for special delivery...</p>
+    </div>
+
+    <div id="envelope-layer">
+        <div class="envelope-wrapper" onclick="openEnvelope()">
+            <div class="envelope">
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+                <div class="letter">
+                    <div class="letter-corner"></div>
+                    <p>For <span id="envelope-name">You</span></p>
+                </div>
+                <div class="wax-seal"></div>
+            </div>
+            <p class="tap-hint">Tap to open ❤️</p>
+        </div>
+    </div>
+
+    <main id="main-content" class="hidden">
+
+        <div class="heart-bg" id="heart-bg"></div>
+
+        <audio id="bg-music">
+            <source id="music-source" src="" type="audio/mpeg">
+        </audio>
+
+        <div class="container">
+
+            <div id="counter-section" class="hidden">
+                <p>We've been knowing each other for</p>
+                <div id="timer">0 Days : 0 Hrs : 0 Mins</div>
+            </div>
+
+            <div id="note-section" class="paper-note hidden">
+                <div id="note-content">
+                    <span id="typed-text"></span>
+                    <span id="hand-cursor">
+                        <img src="assets/hand.png" alt="Hand writing">
+                    </span>
+                </div>
+            </div>
+
+            <h1>Our Memories ❤️</h1>
+
+            <div class="gallery" id="gallery-container">
+            </div>
+
+            <div class="proposal-section">
+                <h2 id="main-question">...</h2>
+
+                <div class="buttons">
+                    <button class="btn btn-yes" onclick="acceptProposal()">Yes!</button>
+                    <button class="btn btn-no" id="no-btn" onclick="rejectProposal()">No</button>
+                </div>
+
+                <div id="success-message" class="hidden">
+                    Yay! Best decision ever! 💖
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Memory">
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
